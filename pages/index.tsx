@@ -145,7 +145,7 @@ const NavigationMenuDemo = () => {
                       <path d="M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z"></path>
                     </svg>
                     <div className="CalloutHeading">
-                      Hi, I'm Lewis.
+                      Hi, I&apos;m Lewis.
                       <br />A frontend developer
                     </div>
                     <p className="CalloutText">Click to email me.</p>
