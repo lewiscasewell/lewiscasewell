@@ -221,7 +221,7 @@ const Navbar = () => {
                 Find out more about me.
               </ListItem>
               <ListItem
-                href="mailto:someone@yoursite.com?subject=Hello Lewis"
+                href="mailto:lewiscasewell@hotmail.co.uk?subject=Hello Lewis"
                 title="Contact"
               >
                 Shoot me an email.
