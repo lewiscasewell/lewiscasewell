@@ -256,6 +256,15 @@ const Navbar = () => {
                 An application built using React-native, Fastify and
                 Watermelondb for offline syncing primitives.
               </ListItem>
+              <ListItem
+                title="Password generator"
+                href="https://passwords.lewiscasewell.com"
+              >
+                Generate passwords with a single seed phrase and domain name.
+                <br />
+                This application uses the pbkdf2 algorithm to generate the
+                passwords which is one of the most secure ways to do so.
+              </ListItem>
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
