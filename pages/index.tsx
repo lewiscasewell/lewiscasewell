@@ -247,13 +247,14 @@ const Navbar = () => {
                 PlanetScale and Tailwindcss.
               </ListItem>
               <ListItem
-                title="Weight tracker"
-                href="https://weight-tracker-beta.vercel.app"
+                title="Openweight"
+                href="https://apps.apple.com/gb/app/openweight/id6449994612"
               >
-                Track your daily bodyweight and calculate your daily calorie
-                target.
-                <br />A PWA built using Nextjs, Firebase Authentication,
-                Firestore and Tailwindcss.
+                Track your daily bodyweight, calculate your daily calorie target
+                and sync with Apple Health.
+                <br />
+                An application built using React-native, Fastify and
+                Watermelondb for offline syncing primitives.
               </ListItem>
             </ul>
           </NavigationMenu.Content>
