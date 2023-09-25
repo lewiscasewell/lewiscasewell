@@ -210,8 +210,8 @@ const Navbar = () => {
                   >
                     <div className="CalloutHeading">Hi, I&apos;m Lewis.</div>
                     <p className="CalloutText">
-                      I am a UK based frontend developer primarily working with
-                      Typescript, React and React-native.
+                      I am a UK based software engineer primarily working with
+                      Typescript, Go, React and React-native.
                     </p>
                   </Link>
                 </NavigationMenu.Link>
@@ -240,30 +240,22 @@ const Navbar = () => {
           <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List two">
               <ListItem title="Polls" href="https://polls.lewiscasewell.com">
-                Need to settle a question? Start a 24hr poll that you can share
-                with anyone.
-                <br />
-                This application was built using Nextjs, tRPC, Prisma,
-                PlanetScale and Tailwindcss.
+                Create and vote on polls.
               </ListItem>
               <ListItem
                 title="Openweight"
                 href="https://apps.apple.com/gb/app/openweight/id6449994612"
               >
-                Track your daily bodyweight, calculate your daily calorie target
-                and sync with Apple Health.
-                <br />
-                An application built using React-native, Fastify and
-                Watermelondb for offline syncing primitives.
+                Bodyweight tracker for iOS. Written in react-native and node
               </ListItem>
               <ListItem
                 title="Password generator"
                 href="https://passwords.lewiscasewell.com"
               >
-                Generate passwords with a single seed phrase and domain name.
-                <br />
-                This application uses the pbkdf2 algorithm to generate the
-                passwords which is one of the most secure ways to do so.
+                Generate passwords with a seed phrase.
+              </ListItem>
+              <ListItem title="gm" href="https://gm.lewiscasewell.com">
+                Crypto portfolio CLI written in Go.
               </ListItem>
             </ul>
           </NavigationMenu.Content>
