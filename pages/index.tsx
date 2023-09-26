@@ -155,7 +155,7 @@ export default function Home() {
             );
           })}
           <axesHelper />
-          <OrbitControls />
+          <OrbitControls maxDistance={150} minDistance={4} />
         </Canvas>
 
         <FooterMenu />
