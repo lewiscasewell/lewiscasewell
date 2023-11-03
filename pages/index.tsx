@@ -10,18 +10,24 @@ import {
 } from "@radix-ui/react-icons";
 
 import Link from "next/link";
-import React from "react";
+import React, { MutableRefObject, Ref } from "react";
 import { OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame, Vector3 } from "@react-three/fiber";
+import { Canvas, ThreeElements, useFrame, Vector3 } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
-import { MathUtils } from "three";
+import {
+  BufferGeometry,
+  Material,
+  MathUtils,
+  Mesh,
+  ShaderMaterial,
+} from "three";
 
 import vertexShader from "../utils/vertexShader";
 import fragmentShader from "../utils/fragmentShader";
 
 const Blob = () => {
   // This reference will give us direct access to the mesh
-  const mesh = useRef<any>();
+  const mesh = useRef<Mesh<BufferGeometry, ShaderMaterial>>(null);
   const hover = useRef(false);
 
   const uniforms = useMemo(
@@ -38,6 +44,7 @@ const Blob = () => {
 
   useFrame((state) => {
     const { clock } = state;
+    if (!mesh.current) return null;
     mesh.current.material.uniforms.u_time.value = 0.4 * clock.getElapsedTime();
 
     mesh.current.material.uniforms.u_intensity.value = MathUtils.lerp(
@@ -71,7 +78,7 @@ const Blobs: React.FC<{ scale: number; position: Vector3 | undefined }> = ({
   position,
 }) => {
   // This reference will give us direct access to the mesh
-  const mesh = useRef<any>();
+  const mesh = useRef<Mesh<BufferGeometry, ShaderMaterial>>(null);
   const hover = useRef(false);
 
   const uniforms = useMemo(
@@ -88,7 +95,8 @@ const Blobs: React.FC<{ scale: number; position: Vector3 | undefined }> = ({
 
   useFrame((state) => {
     const { clock } = state;
-    mesh.current.material.uniforms.u_time.value = 0.4 * clock.getElapsedTime();
+    if (!mesh.current) return null;
+    mesh.current!.material.uniforms.u_time.value = 0.4 * clock.getElapsedTime();
 
     mesh.current.material.uniforms.u_intensity.value = MathUtils.lerp(
       mesh.current.material.uniforms.u_intensity.value,
@@ -211,7 +219,7 @@ const Navbar = () => {
                     <div className="CalloutHeading">Hi, I&apos;m Lewis.</div>
                     <p className="CalloutText">
                       I am a UK based software engineer primarily working with
-                      Typescript, Go, React and React-native.
+                      Typescript, Go, React and React native.
                     </p>
                   </Link>
                 </NavigationMenu.Link>
@@ -239,14 +247,11 @@ const Navbar = () => {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List two">
-              <ListItem title="Polls" href="https://polls.lewiscasewell.com">
-                Create and vote on polls.
-              </ListItem>
               <ListItem
                 title="Openweight"
                 href="https://apps.apple.com/gb/app/openweight/id6449994612"
               >
-                Bodyweight tracker for iOS. Written in react-native and node
+                Bodyweight tracker for iOS. Written with react-native and node
               </ListItem>
               <ListItem
                 title="Password generator"
