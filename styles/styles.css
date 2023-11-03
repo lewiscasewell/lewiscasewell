@@ -178,7 +178,7 @@ svg.Icon {
   .List.two {
     width: 500px;
     grid-auto-flow: column;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 
