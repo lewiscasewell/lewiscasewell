@@ -251,16 +251,19 @@ const Navbar = () => {
                 title="Openweight"
                 href="https://apps.apple.com/gb/app/openweight/id6449994612"
               >
-                Bodyweight tracker for iOS. Written with react-native and node
+                Bodyweight tracker for iOS. Built with react-native and node.
+                Uses WatermelonDB for online/offline data sync.
               </ListItem>
               <ListItem
-                title="Password generator"
-                href="https://passwords.lewiscasewell.com"
+                title="react-native-patterns"
+                href="https://github.com/lewiscasewell/react-native-patterns"
               >
-                Generate passwords with a seed phrase.
+                Component library for react-native that allows you to build
+                reproducible abstract patterns.
               </ListItem>
               <ListItem title="gm" href="https://gm.lewiscasewell.com">
-                Crypto portfolio CLI written in Go.
+                Crypto portfolio CLI written in Go. Can either download for
+                windows or macOs
               </ListItem>
             </ul>
           </NavigationMenu.Content>
