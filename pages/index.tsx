@@ -23,7 +23,10 @@ import {
 } from "three";
 
 import vertexShader from "../utils/vertexShader";
-import fragmentShader from "../utils/fragmentShader";
+import {
+  fragmentShaderPlanet,
+  fragmentShaderStar,
+} from "../utils/fragmentShader";
 
 const Blob = () => {
   // This reference will give us direct access to the mesh
@@ -64,7 +67,7 @@ const Blob = () => {
     >
       <icosahedronGeometry args={[2, 20]} />
       <shaderMaterial
-        fragmentShader={fragmentShader}
+        fragmentShader={fragmentShaderPlanet}
         vertexShader={vertexShader}
         uniforms={uniforms}
         wireframe={false}
@@ -115,7 +118,7 @@ const Blobs: React.FC<{ scale: number; position: Vector3 | undefined }> = ({
     >
       <icosahedronGeometry args={[2, 20]} />
       <shaderMaterial
-        fragmentShader={fragmentShader}
+        fragmentShader={fragmentShaderStar}
         vertexShader={vertexShader}
         uniforms={uniforms}
         wireframe={false}
